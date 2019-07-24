@@ -5,7 +5,7 @@ namespace Movement2D
     public class CharacterMovement : MonoBehaviour
     {
         private Transform _transform;
-        private float _speed = 50f;
+        private float _speed = 5f;
 
         private void Start()
         {
