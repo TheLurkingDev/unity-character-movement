@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Movement2D
+namespace MovementVector2D
 {
     public class PlayerMovement : CharacterMovement
     {
