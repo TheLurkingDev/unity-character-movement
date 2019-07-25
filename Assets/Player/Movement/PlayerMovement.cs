@@ -4,6 +4,18 @@ namespace MovementVector2D
 {
     public class PlayerMovement : CharacterMovement
     {
+        [SerializeField]
+        private AnimationClip _idleUp;
+
+        [SerializeField]
+        private AnimationClip _idleRight;
+
+        [SerializeField]
+        private AnimationClip _idleDown;
+
+        [SerializeField]
+        private AnimationClip _idleLeft;
+
         private void Update()
         {
             var movementVector = GetMovementDirectionFromKeyboardInput();
