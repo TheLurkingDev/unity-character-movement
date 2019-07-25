@@ -16,6 +16,18 @@ namespace MovementVector2D
         [SerializeField]
         private AnimationClip _idleLeft;
 
+        [SerializeField]
+        private AnimationClip _walkUp;
+
+        [SerializeField]
+        private AnimationClip _walkRight;
+
+        [SerializeField]
+        private AnimationClip _walkDown;
+
+        [SerializeField]
+        private AnimationClip _walkLeft;
+
         private void Update()
         {
             var movementVector = GetMovementDirectionFromKeyboardInput();
