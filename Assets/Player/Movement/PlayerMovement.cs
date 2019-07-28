@@ -21,11 +21,16 @@ namespace MovementVector2D
             if(movementVector != Vector2.zero)
             {
                 base.Move(movementVector);
-                PlayAnimation(movementVector);
+                PlayWalkAnimation(movementVector);
+                _lastMovementDirection = movementVector;
+            }
+            else
+            {
+                PlayIdleAnimation(_lastMovementDirection);
             }
         }
 
-        private void PlayAnimation(Vector2 animationDirection)
+        private void PlayIdleAnimation(Vector2 animationDirection)
         {
             if(animationDirection == Vector2.up)
             {
@@ -42,6 +47,26 @@ namespace MovementVector2D
             else if (animationDirection == Vector2.left)
             {
                 _animator.Play("Female_Idle_Left");
+            }
+        }
+
+        private void PlayWalkAnimation(Vector2 animationDirection)
+        {
+            if (animationDirection == Vector2.up)
+            {
+                _animator.Play("Female_Walk_Up");
+            }
+            else if (animationDirection == Vector2.right)
+            {
+                _animator.Play("Female_Walk_Right");
+            }
+            else if (animationDirection == Vector2.down)
+            {
+                _animator.Play("Female_Walk_Down");
+            }
+            else if (animationDirection == Vector2.left)
+            {
+                _animator.Play("Female_Walk_Left");
             }
         }
 
