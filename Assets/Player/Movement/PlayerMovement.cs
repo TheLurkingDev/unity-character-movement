@@ -4,29 +4,16 @@ namespace MovementVector2D
 {
     public class PlayerMovement : CharacterMovement
     {
-        [SerializeField]
-        private AnimationClip _idleUp;
+        private Animator _animator;        
 
-        [SerializeField]
-        private AnimationClip _idleRight;
+        private Vector2 _lastMovementDirection;
 
-        [SerializeField]
-        private AnimationClip _idleDown;
-
-        [SerializeField]
-        private AnimationClip _idleLeft;
-
-        [SerializeField]
-        private AnimationClip _walkUp;
-
-        [SerializeField]
-        private AnimationClip _walkRight;
-
-        [SerializeField]
-        private AnimationClip _walkDown;
-
-        [SerializeField]
-        private AnimationClip _walkLeft;
+        private void Start()
+        {
+            _animator = GetComponent<Animator>();            
+            _lastMovementDirection = Vector2.down;
+            base.BaseStart();
+        }
 
         private void Update()
         {
@@ -34,6 +21,27 @@ namespace MovementVector2D
             if(movementVector != Vector2.zero)
             {
                 base.Move(movementVector);
+                PlayAnimation(movementVector);
+            }
+        }
+
+        private void PlayAnimation(Vector2 animationDirection)
+        {
+            if(animationDirection == Vector2.up)
+            {
+                _animator.Play("Female_Idle_Up");
+            }
+            else if (animationDirection == Vector2.right)
+            {
+                _animator.Play("Female_Idle_Right");
+            }
+            else if (animationDirection == Vector2.down)
+            {
+                _animator.Play("Female_Idle_Down");
+            }
+            else if (animationDirection == Vector2.left)
+            {
+                _animator.Play("Female_Idle_Left");
             }
         }
 

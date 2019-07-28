@@ -7,7 +7,7 @@ namespace MovementVector2D
         private Transform _transform;
         private float _speed = 5f;
 
-        private void Start()
+        protected void BaseStart()
         {
             _transform = this.gameObject.transform;
         }
