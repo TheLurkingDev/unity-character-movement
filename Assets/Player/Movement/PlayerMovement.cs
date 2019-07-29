@@ -54,19 +54,19 @@ namespace MovementVector2D
         {
             if (animationDirection == Vector2.up)
             {
-                _animator.Play("Female_Walk_Up");
+                _animator.Play(_playerAnimationClips.WalkUp);
             }
             else if (animationDirection == Vector2.right)
             {
-                _animator.Play("Female_Walk_Right");
+                _animator.Play(_playerAnimationClips.WalkRight);
             }
             else if (animationDirection == Vector2.down)
             {
-                _animator.Play("Female_Walk_Down");
+                _animator.Play(_playerAnimationClips.WalkDown);
             }
             else if (animationDirection == Vector2.left)
             {
-                _animator.Play("Female_Walk_Left");
+                _animator.Play(_playerAnimationClips.WalkLeft);
             }
         }
 

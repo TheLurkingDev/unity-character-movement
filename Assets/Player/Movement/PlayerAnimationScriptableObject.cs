@@ -10,6 +10,11 @@ namespace MovementVector2D
         [SerializeField] private AnimationClip _idleDown;
         [SerializeField] private AnimationClip _idleLeft;
 
+        [SerializeField] private AnimationClip _walkUp;
+        [SerializeField] private AnimationClip _walkRight;
+        [SerializeField] private AnimationClip _walkDown;
+        [SerializeField] private AnimationClip _walkLeft;
+
         public string IdleUp
         {
             get { return _idleUp.name; }
@@ -28,6 +33,26 @@ namespace MovementVector2D
         public string IdleLeft
         {
             get { return _idleLeft.name; }
+        }
+
+        public string WalkUp
+        {
+            get { return _walkUp.name; }
+        }
+
+        public string WalkRight
+        {
+            get { return _walkRight.name; }
+        }
+
+        public string WalkDown
+        {
+            get { return _walkDown.name; }
+        }
+
+        public string WalkLeft
+        {
+            get { return _walkLeft.name; }
         }
     }
 }

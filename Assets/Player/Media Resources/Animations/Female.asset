@@ -16,3 +16,7 @@ MonoBehaviour:
   _idleRight: {fileID: 7400000, guid: 5323aba74e2b49641a3cc4be89012e68, type: 2}
   _idleDown: {fileID: 7400000, guid: f524684f51910ba449173dd419f63542, type: 2}
   _idleLeft: {fileID: 7400000, guid: bc2513a53f144414aad058e14bc3709a, type: 2}
+  _walkUp: {fileID: 7400000, guid: 68ff8a27ac3919a4a837bfc6ae08bd24, type: 2}
+  _walkRight: {fileID: 7400000, guid: e22acdc2a6819884c8628cfce725beb6, type: 2}
+  _walkDown: {fileID: 7400000, guid: 392e5a46be0a25c43b088effaa923873, type: 2}
+  _walkLeft: {fileID: 7400000, guid: 7a676be8df1f3ae4483c30b02dda1a59, type: 2}
