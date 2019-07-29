@@ -6,67 +6,29 @@ namespace MovementVector2D
     {
         private Animator _animator;        
         private Vector2 _lastMovementDirection;
+        private PlayerAnimation _playerAnimation;
         [SerializeField] private PlayerAnimationScriptableObject _playerAnimationClips;
 
         private void Start()
         {
             _animator = GetComponent<Animator>();            
             _lastMovementDirection = Vector2.down;
+            _playerAnimation = new PlayerAnimation(_animator, _playerAnimationClips);
             base.BaseStart();
         }
 
         private void Update()
         {
-            var movementVector = GetMovementDirectionFromKeyboardInput();
-            if(movementVector != Vector2.zero)
+            var movementVector = GetMovementDirectionFromKeyboardInput();            
+            if (movementVector != Vector2.zero)
             {
-                base.Move(movementVector);
-                PlayWalkAnimation(movementVector);
+                base.Move(movementVector);                
+                _playerAnimation.PlayAnimation(AnimationType.Walk, movementVector);                
                 _lastMovementDirection = movementVector;
             }
             else
             {
-                PlayIdleAnimation(_lastMovementDirection);
-            }
-        }
-
-        private void PlayIdleAnimation(Vector2 animationDirection)
-        {
-            if(animationDirection == Vector2.up)
-            {
-                _animator.Play(_playerAnimationClips.IdleUp);
-            }
-            else if (animationDirection == Vector2.right)
-            {
-                _animator.Play(_playerAnimationClips.IdleRight);
-            }
-            else if (animationDirection == Vector2.down)
-            {
-                _animator.Play(_playerAnimationClips.IdleDown);
-            }
-            else if (animationDirection == Vector2.left)
-            {
-                _animator.Play(_playerAnimationClips.IdleLeft);
-            }
-        }
-
-        private void PlayWalkAnimation(Vector2 animationDirection)
-        {
-            if (animationDirection == Vector2.up)
-            {
-                _animator.Play(_playerAnimationClips.WalkUp);
-            }
-            else if (animationDirection == Vector2.right)
-            {
-                _animator.Play(_playerAnimationClips.WalkRight);
-            }
-            else if (animationDirection == Vector2.down)
-            {
-                _animator.Play(_playerAnimationClips.WalkDown);
-            }
-            else if (animationDirection == Vector2.left)
-            {
-                _animator.Play(_playerAnimationClips.WalkLeft);
+                _playerAnimation.PlayAnimation(AnimationType.Idle, _lastMovementDirection);                
             }
         }
 
