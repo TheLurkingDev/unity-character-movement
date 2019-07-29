@@ -151,10 +151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c4a35a60d665d44b86dd7c530d2f7db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _femaleIdleUp: {fileID: 7400000, guid: ea74df99eb704c04f9ae9fd12cae43e8, type: 2}
-  _femaleIdleRight: {fileID: 0}
-  _femaleIdleDown: {fileID: 0}
-  _femaleIdleLeft: {fileID: 0}
+  _playerAnimationClips: {fileID: 11400000, guid: 0c6da03a7cf88de4aa194f29d61bf96f,
+    type: 2}
 --- !u!4 &1142626410
 Transform:
   m_ObjectHideFlags: 0

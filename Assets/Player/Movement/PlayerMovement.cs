@@ -5,8 +5,8 @@ namespace MovementVector2D
     public class PlayerMovement : CharacterMovement
     {
         private Animator _animator;        
-
         private Vector2 _lastMovementDirection;
+        [SerializeField] private PlayerAnimationScriptableObject _playerAnimationClips;
 
         private void Start()
         {
@@ -34,19 +34,19 @@ namespace MovementVector2D
         {
             if(animationDirection == Vector2.up)
             {
-                _animator.Play("Female_Idle_Up");
+                _animator.Play(_playerAnimationClips.IdleUp);
             }
             else if (animationDirection == Vector2.right)
             {
-                _animator.Play("Female_Idle_Right");
+                _animator.Play(_playerAnimationClips.IdleRight);
             }
             else if (animationDirection == Vector2.down)
             {
-                _animator.Play("Female_Idle_Down");
+                _animator.Play(_playerAnimationClips.IdleDown);
             }
             else if (animationDirection == Vector2.left)
             {
-                _animator.Play("Female_Idle_Left");
+                _animator.Play(_playerAnimationClips.IdleLeft);
             }
         }
 
