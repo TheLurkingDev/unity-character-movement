@@ -4,8 +4,8 @@ namespace MovementVector2D
 {
     public abstract class PlayerMovementBase : MonoBehaviour
     {
-        private Transform _transform;
-        private float _speed = 5f;
+        protected Transform _transform;
+        protected float _speed = 5f;
         private Animator _animator;
         private Vector2 _lastMovementDirection;
         private PlayerAnimation _playerAnimation;
