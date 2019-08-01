@@ -15,7 +15,7 @@ namespace MovementVector2D
             if (movementVector != Vector2.zero)
             {
                 Move(movementVector);
-                base.PlayWalkAnimation(movementVector);
+                base.PlayWalkAnimationOnce(movementVector);
             }
             else
             {

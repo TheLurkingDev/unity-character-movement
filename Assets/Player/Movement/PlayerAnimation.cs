@@ -54,5 +54,52 @@ namespace MovementVector2D
                 }
             }
         }
+
+        public void PlayAnimationOnce(AnimationType animationType, Vector2 animationDirection)
+        {
+            if (animationType == AnimationType.Idle)
+            {
+                if (animationDirection == Vector2.up)
+                {
+                    _animator.Play(_playerAnimations.IdleUp, 0, 1f);
+                }
+                else if (animationDirection == Vector2.right)
+                {
+                    _animator.Play(_playerAnimations.IdleRight, 0, 1f);
+                }
+                else if (animationDirection == Vector2.down)
+                {
+                    _animator.Play(_playerAnimations.IdleDown, 0, 1f);
+                }
+                else if (animationDirection == Vector2.left)
+                {
+                    _animator.Play(_playerAnimations.IdleLeft, 0, 1f);
+                }
+            }
+            else if (animationType == AnimationType.Walk)
+            {
+                if (animationDirection == Vector2.up)
+                {
+                    _animator.Play(_playerAnimations.WalkUp, -1, 1000f);
+                    
+                    
+                }
+                else if (animationDirection == Vector2.right)
+                {
+                    //_animator.Play(_playerAnimations.WalkRight, -1, 1000f);
+                    
+                }
+                else if (animationDirection == Vector2.down)
+                {
+                    //_animator.Play(_playerAnimations.WalkDown, -1, 1000f);
+                    _animator.SetBool("walk", true);
+                }
+                else if (animationDirection == Vector2.left)
+                {
+                    //_animator.Play(_playerAnimations.WalkLeft, -1, 1000f);
+                    
+                }
+            }
+        }
     }
 }

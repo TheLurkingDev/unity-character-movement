@@ -29,6 +29,12 @@ namespace MovementVector2D
             _lastMovementDirection = movementVector;
         }
 
+        protected void PlayWalkAnimationOnce(Vector2 movementVector)
+        {
+            _playerAnimation.PlayAnimationOnce(AnimationType.Walk, movementVector);
+            _lastMovementDirection = movementVector;
+        }
+
         protected void PlayIdleAnimation()
         {
             _playerAnimation.PlayAnimation(AnimationType.Idle, _lastMovementDirection);
