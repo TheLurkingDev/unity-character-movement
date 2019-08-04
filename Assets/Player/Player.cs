@@ -15,12 +15,13 @@ namespace Player
         {
             if (Input.GetKeyDown(KeyCode.F1))
             {
-                PlayerPersistence persistence = new PlayerPersistence(_transform.position);                
-                ObjectPersistenceService.Save(persistence, "Player");
+                PlayerPersistence persistence = new PlayerPersistence(_transform.position);
+                //ObjectPersistenceService.SaveObjectToJsonFile(persistence, "Player");
+                ObjectPersistenceService.SaveObjectToBinaryFile(persistence, "Player");
             }
             if (Input.GetKeyDown(KeyCode.F2))
             {                
-                PlayerPersistence playerPersistence = ObjectPersistenceService.Load<PlayerPersistence>("Player");
+                PlayerPersistence playerPersistence = ObjectPersistenceService.LoadObjectFromJsonFile<PlayerPersistence>("Player");
                 _transform.position = playerPersistence.PlayerPosition;
             }
         }
