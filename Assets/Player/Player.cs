@@ -20,8 +20,9 @@ namespace Player
                 ObjectPersistenceService.SaveObjectToBinaryFile(persistence, "Player");
             }
             if (Input.GetKeyDown(KeyCode.F2))
-            {                
-                PlayerPersistence playerPersistence = ObjectPersistenceService.LoadObjectFromJsonFile<PlayerPersistence>("Player");
+            {
+                //PlayerPersistence playerPersistence = ObjectPersistenceService.LoadObjectFromJsonFile<PlayerPersistence>("Player");
+                PlayerPersistence playerPersistence = ObjectPersistenceService.LoadObjectFromBinaryFile<PlayerPersistence>("Player");
                 _transform.position = playerPersistence.PlayerPosition;
             }
         }
