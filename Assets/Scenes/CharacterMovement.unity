@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 1142626412}
   - component: {fileID: 1142626413}
   - component: {fileID: 1142626409}
+  - component: {fileID: 1142626414}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -147,7 +148,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1142626408}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3ed5a43ec0ed8e478b652dd5ff78c66, type: 3}
   m_Name: 
@@ -245,13 +246,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1142626408}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62d860e550c163a4abeb23b439c9707c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _playerAnimationClips: {fileID: 11400000, guid: 0c6da03a7cf88de4aa194f29d61bf96f,
     type: 2}
+--- !u!114 &1142626414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142626408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ae4586e511fc49439c5b78f0b326802, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1719190391
 GameObject:
   m_ObjectHideFlags: 0

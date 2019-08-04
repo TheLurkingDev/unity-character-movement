@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Persistence;
 using UnityEngine;
-using Persistence;
 
 namespace Player
 {
@@ -15,13 +13,15 @@ namespace Player
         }
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.F1))
             {
-
+                PlayerPersistence persistence = new PlayerPersistence(_transform.position);                
+                ObjectPersistenceService.Save(persistence, "Player");
             }
-            if (Input.GetKeyDown(KeyCode.L))
-            {
-
+            if (Input.GetKeyDown(KeyCode.F2))
+            {                
+                PlayerPersistence playerPersistence = ObjectPersistenceService.Load<PlayerPersistence>("Player");
+                _transform.position = playerPersistence.PlayerPosition;
             }
         }
     }
