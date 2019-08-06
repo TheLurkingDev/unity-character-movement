@@ -16,10 +16,18 @@ namespace MovementVector2D
             {
                 Move(movementVector);
                 base.PlayWalkAnimation(movementVector);
+                if(!base.FootstepAudioClipIsPlaying())
+                {
+                    base.PlayFootstepAudioClipLooped();
+                }
             }
             else
             {
                 base.PlayIdleAnimation();
+                if(base.FootstepAudioClipIsPlaying())
+                {
+                    base.StopPlayingFootStepAudioClip();
+                }
             }
         }
 

@@ -16,6 +16,7 @@ namespace MovementVector2D
             {
                 Move(movementVector);
                 base.PlayWalkAnimationOnce(movementVector);
+                base.PlayFootstepAudioClipOnce();
             }
             else
             {
