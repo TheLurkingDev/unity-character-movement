@@ -1,7 +1,7 @@
-﻿using Persistence;
+﻿using TheLurkingDev.Persistence;
 using UnityEngine;
 
-namespace Player
+namespace TheLurkingDev.Player
 {
     public class Player : MonoBehaviour
     {

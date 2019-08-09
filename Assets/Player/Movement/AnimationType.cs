@@ -1,4 +1,4 @@
-﻿namespace MovementVector2D
+﻿namespace TheLurkingDev.Player.Movement2D
 {
     public enum AnimationType
     {

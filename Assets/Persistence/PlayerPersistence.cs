@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Persistence
+namespace TheLurkingDev.Persistence
 {
     public class PlayerPersistence
     {

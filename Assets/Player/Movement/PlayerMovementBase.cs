@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace MovementVector2D
+namespace TheLurkingDev.Player.Movement2D
 {
     public abstract class PlayerMovementBase : MonoBehaviour
     {
