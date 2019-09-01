@@ -14,7 +14,7 @@ The `ObjectPersistenceService` class provides functionality for persisting data 
 ### Setting Up Persistence In An Existing Project
 * Create a class within the `Persistence` namespace to contain all of the data to be persisted for an object
 
-```
+``` c#
 using UnityEngine;
 
 namespace TheLurkingDev.Persistence
@@ -35,4 +35,37 @@ namespace TheLurkingDev.Persistence
 * Create an instance of the new class and populate its properties
 * Utilize the static method `ObjectPersistenceService.SaveObjectToBinaryFile` and pass the object to be saved into it along with a string name that will be used to later retrieve the object's data
 * Utilize the static method `ObjectPersistenceService.LoadObjectFromBinaryFile` to retrieve the object by the name specified during saving
+
+Here is a simple example that saves and loads the position of a `Player`:
+
+``` c#
+namespace TheLurkingDev.Player
+{
+    public class Player : MonoBehaviour
+    {
+        private Transform _transform;
+
+        private void Start()
+        {
+            _transform = GetComponent<Transform>();
+        }
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.F1))
+            {
+                PlayerPersistence persistence = new PlayerPersistence(_transform.position);
+                //ObjectPersistenceService.SaveObjectToJsonFile(persistence, "Player");
+                ObjectPersistenceService.SaveObjectToBinaryFile(persistence, "Player");
+            }
+            if (Input.GetKeyDown(KeyCode.F2))
+            {
+                //PlayerPersistence playerPersistence = ObjectPersistenceService.LoadObjectFromJsonFile<PlayerPersistence>("Player");
+                PlayerPersistence playerPersistence = ObjectPersistenceService.LoadObjectFromBinaryFile<PlayerPersistence>("Player");
+                _transform.position = playerPersistence.PlayerPosition;
+            }
+        }
+    }
+}
+```
+
 
