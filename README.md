@@ -8,6 +8,11 @@ The `PlayerMovementBase` class sets up shared base functionality for movement, a
 
 In the `Update()` method of the parent class, if keyboard movement is detected, the parent class should ultimately utilize the `_transform.position` object found withn the base class to perform movement. Additionally, if movement is turn-based, calls to the base class methods `PlayWalkAnimationOnce()` and `PlayFootstepAudioClipOnce` should be called to play animation and associated audio respectively. Conversely, if movement is real-time, the methods `PlayWalkAnimation()` and `PlayFootstepAudioClipLooped` should be used.
 
+### Adding The Movement Components
+The parent class derived from `PlayerMovementBase` must be added to the `Player` object in the scene. Once added, the `Player Animation Clips` field must be populated with a `Scriptable Object` instance that references all necessary animation clips. The `Foot Step Sound Clip` field must also be specified.
+
+Note that for aniamtions to be seen, the `Player` object must have a `Sprite Renderer` component attached. Further, for audio clips to be heard, an `Audio Source` component must also be added to the `Player` object.
+
 ## Object Persistence
 The `ObjectPersistenceService` class provides functionality for persisting data to either a json file or a binary file. To create a file that is not readable by a user, and therefore not editable, choose to persist to a binary file. Conversely, choose a json file if you want to allow the user to make changes to mod the game.
 
