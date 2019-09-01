@@ -6,7 +6,7 @@ namespace TheLurkingDev.Player.Movement2D
     {
         private void Start()
         {
-            base.BaseStart();
+            BaseStart();
         }
 
         private void Update()
@@ -15,25 +15,25 @@ namespace TheLurkingDev.Player.Movement2D
             if (movementVector != Vector2.zero)
             {
                 Move(movementVector);
-                base.PlayWalkAnimation(movementVector);
-                if(!base.FootstepAudioClipIsPlaying())
+                PlayWalkAnimation(movementVector);
+                if(!FootstepAudioClipIsPlaying())
                 {
-                    base.PlayFootstepAudioClipLooped();
+                    PlayFootstepAudioClipLooped();
                 }
             }
             else
             {
-                base.PlayIdleAnimation();
-                if(base.FootstepAudioClipIsPlaying())
+                PlayIdleAnimation();
+                if(FootstepAudioClipIsPlaying())
                 {
-                    base.StopPlayingFootStepAudioClip();
+                    StopPlayingFootStepAudioClip();
                 }
             }
         }
 
         protected override Vector2 Move(Vector2 movementVector)
         {
-            base._transform.position += new Vector3(movementVector.x, movementVector.y, base._transform.position.z) * base._speed * Time.deltaTime;
+            _transform.position += new Vector3(movementVector.x, movementVector.y, _transform.position.z) * _speed * Time.deltaTime;
             return _transform.position;
         }
 

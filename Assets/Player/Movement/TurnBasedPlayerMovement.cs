@@ -6,7 +6,7 @@ namespace TheLurkingDev.Player.Movement2D
     {
         private void Start()
         {
-            base.BaseStart();
+            BaseStart();
         }
 
         private void Update()
@@ -15,8 +15,8 @@ namespace TheLurkingDev.Player.Movement2D
             if (movementVector != Vector2.zero)
             {
                 Move(movementVector);
-                base.PlayWalkAnimationOnce(movementVector);
-                base.PlayFootstepAudioClipOnce();
+                PlayWalkAnimationOnce(movementVector);
+                PlayFootstepAudioClipOnce();
             }
             else
             {
