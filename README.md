@@ -1,7 +1,12 @@
 # Character Movement and Object Persistence
 
 ## Character Movement
+The `PlayerMovementBase` class sets up shared base functionality for movement, animation, and audio related to movement, such as the sound of footsteps. 
 
+### Inheriting From `PlayerMovementBase`
+`PlayerMovementBase` is an abstract class that must be inherited. The parent class must call to the `BaseStart()` method during its own `Start()`.
+
+In the `Update()` method of the parent class, if keyboard movement is detected, the parent class should ultimately utilize the `_transform.position` object found withn the base class to perform movement. Additionally, if movement is turn-based, calls to the base class methods `PlayWalkAnimationOnce()` and `PlayFootstepAudioClipOnce` should be called to play animation and associated audio respectively. Conversely, if movement is real-time, the methods `PlayWalkAnimation()` and `PlayFootstepAudioClipLooped` should be used.
 
 ## Object Persistence
 The `ObjectPersistenceService` class provides functionality for persisting data to either a json file or a binary file. To create a file that is not readable by a user, and therefore not editable, choose to persist to a binary file. Conversely, choose a json file if you want to allow the user to make changes to mod the game.
