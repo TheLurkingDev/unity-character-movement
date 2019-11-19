@@ -18,6 +18,16 @@ namespace TheLurkingDev.Player.Movement2D
 
         protected void BaseStart()
         {
+            if(_playerAnimationClips == null)
+            {
+                throw new Exception("Player Animation Clips not assigned to player");
+            }
+
+            if(_footStepSoundClip == null)
+            {
+                throw new Exception("Footstep Soundclip not assigned to player.");
+            }
+
             _transform = this.gameObject.transform;
             _animator = GetComponent<Animator>();
             _lastMovementDirection = Vector2.down;
