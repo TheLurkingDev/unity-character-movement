@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace TheLurkingDev.Player.Movement2D
 {
@@ -27,7 +28,30 @@ namespace TheLurkingDev.Player.Movement2D
 
         protected abstract Vector2 Move(Vector2 movementVector);
 
-        protected abstract Vector2 GetMovementDirectionFromKeyboardInput();
+        protected Vector2 GetMovementDirectionFromKeyboardInput(Func<KeyCode, bool> getKeyFunc)
+        {
+            float moveX = 0f;
+            float moveY = 0f;
+
+            if(getKeyFunc(KeyCode.W) || getKeyFunc(KeyCode.UpArrow))
+            {
+                moveY = +1f;
+            }
+            if (getKeyFunc(KeyCode.S) || getKeyFunc(KeyCode.DownArrow))
+            {
+                moveY = -1f;
+            }
+            if (getKeyFunc(KeyCode.A) || getKeyFunc(KeyCode.LeftArrow))
+            {
+                moveX = -1f;
+            }
+            if (getKeyFunc(KeyCode.D) || getKeyFunc(KeyCode.RightArrow))
+            {
+                moveX = +1f;
+            }
+
+            return new Vector2(moveX, moveY).normalized;
+        }
 
         protected void PlayFootstepAudioClipOnce()
         {
