@@ -6,7 +6,7 @@ namespace TheLurkingDev.Player.Movement2D
     public abstract class PlayerMovementBase : MonoBehaviour
     {
         protected Transform _transform;
-        protected float _speed = 5f;
+        [SerializeField] protected float _speed = 5f;
         private Animator _animator;
         private Vector2 _lastMovementDirection;
         private PlayerAnimation _playerAnimation;
@@ -59,7 +59,7 @@ namespace TheLurkingDev.Player.Movement2D
             {
                 moveX = +1f;
             }
-
+            
             return new Vector2(moveX, moveY).normalized;
         }
 

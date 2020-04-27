@@ -80,24 +80,20 @@ namespace TheLurkingDev.Player.Movement2D
             {
                 if (animationDirection == Vector2.up)
                 {
-                    _animator.Play(_playerAnimations.WalkUp, -1, 1000f);
-                    
-                    
+                    _animator.Play(_playerAnimations.WalkUp, -1);
                 }
                 else if (animationDirection == Vector2.right)
                 {
-                    //_animator.Play(_playerAnimations.WalkRight, -1, 1000f);
+                    _animator.Play(_playerAnimations.WalkRight, -1);
                     
                 }
                 else if (animationDirection == Vector2.down)
                 {
-                    //_animator.Play(_playerAnimations.WalkDown, -1, 1000f);
-                    _animator.SetBool("walk", true);
+                    _animator.Play(_playerAnimations.WalkDown, -1);
                 }
                 else if (animationDirection == Vector2.left)
                 {
-                    //_animator.Play(_playerAnimations.WalkLeft, -1, 1000f);
-                    
+                    _animator.Play(_playerAnimations.WalkLeft, -1);
                 }
             }
         }

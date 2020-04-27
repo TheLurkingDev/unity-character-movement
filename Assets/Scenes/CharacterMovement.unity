@@ -96,6 +96,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -149,11 +150,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1142626408}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3ed5a43ec0ed8e478b652dd5ff78c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speed: 0.05
   _playerAnimationClips: {fileID: 11400000, guid: 0c6da03a7cf88de4aa194f29d61bf96f,
     type: 2}
   _footStepSoundClip: {fileID: 8300000, guid: a103bccb1d534d3419736b48050009af, type: 3}
@@ -248,11 +250,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1142626408}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62d860e550c163a4abeb23b439c9707c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speed: 5
   _playerAnimationClips: {fileID: 11400000, guid: 0c6da03a7cf88de4aa194f29d61bf96f,
     type: 2}
   _footStepSoundClip: {fileID: 8300000, guid: a103bccb1d534d3419736b48050009af, type: 3}
