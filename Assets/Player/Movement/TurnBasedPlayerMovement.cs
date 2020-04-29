@@ -7,7 +7,7 @@ namespace TheLurkingDev.Player.Movement2D
         private bool _isMoving;
         private Vector2 _currentPosition;
         private Vector2 _targetPosition;
-        const float _stopWithinDistance = 0.05f;
+        const float _stopWithinDistance = 0.05f;        
 
         private void Start()
         {

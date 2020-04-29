@@ -5,12 +5,13 @@ namespace TheLurkingDev.Player.Movement2D
     public class PlayerAnimation
     {
         private Animator _animator;
-        private PlayerAnimationScriptableObject _playerAnimations;
+        private PlayerAnimationScriptableObject _playerAnimations;        
 
-        public PlayerAnimation(Animator animator, PlayerAnimationScriptableObject playerAnimations)
+        public PlayerAnimation(Animator animator, PlayerAnimationScriptableObject playerAnimations, float playbackSpeed)
         {
             _animator = animator;
-            _playerAnimations = playerAnimations;
+            _animator.speed = playbackSpeed;
+            _playerAnimations = playerAnimations;            
         }
 
         public void PlayAnimation(AnimationType animationType, Vector2 animationDirection)

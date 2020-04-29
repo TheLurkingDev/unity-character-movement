@@ -11,6 +11,7 @@ namespace TheLurkingDev.Player.Movement2D
         private Vector2 _lastMovementDirection;
         private PlayerAnimation _playerAnimation;
         [SerializeField] private PlayerAnimationScriptableObject _playerAnimationClips;
+        [SerializeField] private float _animationPlaybackSpeed = 0.5f;
 
         private AudioSource _audioSource;        
         private float _footStepSoundAudioScale = 1f;
@@ -31,7 +32,7 @@ namespace TheLurkingDev.Player.Movement2D
             _transform = this.gameObject.transform;
             _animator = GetComponent<Animator>();
             _lastMovementDirection = Vector2.down;
-            _playerAnimation = new PlayerAnimation(_animator, _playerAnimationClips);
+            _playerAnimation = new PlayerAnimation(_animator, _playerAnimationClips, _animationPlaybackSpeed);
             _audioSource = GetComponent<AudioSource>();
             _audioSource.clip = _footStepSoundClip;            
         }

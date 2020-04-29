@@ -158,6 +158,7 @@ MonoBehaviour:
   _speed: 0.05
   _playerAnimationClips: {fileID: 11400000, guid: 0c6da03a7cf88de4aa194f29d61bf96f,
     type: 2}
+  _animationPlaybackSpeed: 0.5
   _footStepSoundClip: {fileID: 8300000, guid: a103bccb1d534d3419736b48050009af, type: 3}
 --- !u!4 &1142626410
 Transform:
@@ -255,9 +256,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d860e550c163a4abeb23b439c9707c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
+  _speed: 3
   _playerAnimationClips: {fileID: 11400000, guid: 0c6da03a7cf88de4aa194f29d61bf96f,
     type: 2}
+  _animationPlaybackSpeed: 0.5
   _footStepSoundClip: {fileID: 8300000, guid: a103bccb1d534d3419736b48050009af, type: 3}
 --- !u!114 &1142626414
 MonoBehaviour:
