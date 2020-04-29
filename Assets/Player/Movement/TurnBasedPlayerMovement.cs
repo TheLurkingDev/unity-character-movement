@@ -7,6 +7,7 @@ namespace TheLurkingDev.Player.Movement2D
         private bool _isMoving;
         private Vector2 _currentPosition;
         private Vector2 _targetPosition;
+        const float _stopWithinDistance = 0.05f;
 
         private void Start()
         {
@@ -54,8 +55,11 @@ namespace TheLurkingDev.Player.Movement2D
 
         private void CheckForMoveStop()
         {
-            if (_transform.position == new Vector3(_targetPosition.x, _targetPosition.y))
+            var targetVector3 = new Vector3(_targetPosition.x, _targetPosition.y);
+            
+            if (Vector3.Distance(_transform.position, targetVector3) < _stopWithinDistance)
             {
+                _transform.position = targetVector3;
                 StopMoving();
             }
         }
